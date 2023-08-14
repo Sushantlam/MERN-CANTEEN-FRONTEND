@@ -1,0 +1,100 @@
+.footerMain{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    
+}
+
+.footerImage{
+    position: relative;
+    height: 30%;
+}
+
+#fb:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+#insta:hover{
+    color: red;
+    cursor: pointer;
+}
+#twit:hover{
+    color: blue;
+    cursor: pointer;
+}
+#yt:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.footer{
+    position: absolute;
+    top: 70px;
+    max-width: 1308px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+    right:114px;
+}
+
+.socialmeida{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+    
+}
+
+.smedia{
+    display: flex;
+    gap: 20px;
+    font-size: 60px;
+
+}
+
+.icons{
+    font-size: 30px;
+}
+
+
+@media (min-width: 280px) and (max-width: 669px) {
+    .footer{
+        position: absolute;
+        top: 40px;
+        max-width: 1308px;
+       gap: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        color: black;
+        left: 10px;
+        padding: 0px 0px;
+    }
+    }
+
+
+    @media (min-width: 820px) and (max-width: 1300px) {
+        .footer{
+            position: absolute;
+            top: 40px;
+            max-width: 1308px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            color: black;
+            right: 0px;
+            padding: 0px 0px;
+        }
+        }

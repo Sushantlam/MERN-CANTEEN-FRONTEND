@@ -1,0 +1,98 @@
+
+
+.list{
+    display: flex;
+    /* max-width: 1024px;
+    width: 100%;
+     */
+   
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+   
+    
+}
+.list-item{
+    max-width: 1308px;
+   
+    width: 100%;
+    display: flex;
+   
+   
+}
+
+.seacrh-list-items{
+    max-width: 1308px;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.search{
+    padding: 10px;
+    width: 40%;
+    background-color: goldenrod;
+    position: sticky;
+    top: 10px;
+    height: max-content;
+    border-radius: 10px;
+}
+
+input{
+    border:none;
+    outline:none;
+}
+
+.hotel{
+  
+    width: 70%;
+}
+
+.ls-search{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ls-search>input{
+ height: 30px;
+ border: none;
+ outline: none;
+ padding: 5px;
+}
+
+.ls-search>span{
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 5px 2px;
+   background-color: white;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchbtn{
+    width: 100%;
+    margin-top: 50px;
+   
+   
+}
+
+.searchBtn{
+    background-color: rgb(24, 24, 228);
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+
+.options>input{
+    width: 50px;
+}
+

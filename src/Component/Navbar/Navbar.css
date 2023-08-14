@@ -1,0 +1,63 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+}
+li{
+    color: black;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  
+    max-width: 1308px;
+}
+
+.left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin: 20px 0px;
+}
+
+.logo{
+    height: 70px;
+    border-radius: 45px;
+}
+
+.mainNav{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+li{
+    list-style: none;
+    text-decoration: underline;
+
+}
+
+.right{
+    display: flex;
+    gap: 10px;
+}
+ button{
+    padding: 10px 15px;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    
+ }
+
+ .login{
+    background-color:  rgb(250, 128, 149);
+ }
+
+ button:hover{
+    border:1px solid gray;
+    cursor: grab;
+ }

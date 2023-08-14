@@ -1,0 +1,156 @@
+.hero{
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+
+     */
+     background-color: transparent;
+}
+.image{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+   
+    max-width: 1308px;
+}
+.dots{
+    width: 53%;
+   
+}
+.words{
+    position: absolute;
+    top: 200px;
+    left: 105px;
+}
+
+.welcome{
+    font-size: 35px;
+}
+span{
+    color: rgb(250, 128, 149);
+}
+.booking{
+    font-size: 35px;
+}
+
+.started{
+    padding: 15px 30px;
+    margin-top: 10px;
+    background-color: pink;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-weight: 100;
+    font-size: 20px;
+    box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+    -webkit-box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+    -moz-box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+}
+
+
+
+.heroImg{
+    width: 100%;
+   max-width: 350px;
+   height: 200px;
+   
+}
+
+.heroImg::after{
+    content: "";
+   
+    width: 100vw;
+    top:0;
+    left: 0;
+    background-color: black;
+    position: absolute;
+    opacity: 0.8;
+    overflow: hidden;
+
+}
+
+@media (min-width: 280px) and (max-width: 669px){
+    .words{
+        position: absolute;
+        top: 30px;
+        left: 14px;
+        font-size: 10px;
+    }
+    .welcome{
+        font-size: 30px;
+    }
+    .booking{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 669px) {
+    .image{
+       width: 100%;
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: center;
+    }  
+    .dots{
+        width: 100%;
+       height: 100%;
+    }  
+    .words{
+        position: absolute;
+        top: 50px;
+        left: 44px;
+        font-size: 10px;
+    }
+    .welcome{
+        font-size: 30px;
+    }
+    .booking{
+        font-size: 30px;
+    }
+
+} 
+
+@media (min-width: 669px) and (max-width: 1180px) {
+    .image{
+        width: 100%;
+       
+        display: flex;
+        
+        justify-content: space-between;
+        align-items: center;
+     }  
+     .dots{
+         width: 30%;
+        height: 100%;
+     }  
+     .words{
+         position: absolute;
+         top: 100px;
+         left: 0px;
+         font-size: 10px;
+     }
+     .welcome{
+         font-size: 15px;
+     }
+     .booking{
+         font-size: 15px;
+     }
+     .started{
+        padding: 10px 10px;
+        margin-top: 10px;
+        background-color: pink;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        font-weight: 100;
+        font-size: 20px;
+        box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+        -webkit-box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+        -moz-box-shadow: 14px 3px 20px -5px rgba(212,172,172,0.75) inset;
+    }
+
+} 
