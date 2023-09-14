@@ -80,11 +80,12 @@ export const AuthContext = createContext(INITIAL_VALUE)
 
 const AuthReducer = (state, action) => {
     const cartData = useContext(CartContext)
-console.log(cartData);
+console.log( "Logout",cartData);
     switch (action.type) {
 
         case "Login_Start":
             return {
+                cartData: null,
                 email: null,
                 loading: true,
                 error: null,

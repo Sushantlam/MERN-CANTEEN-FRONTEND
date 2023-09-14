@@ -2,6 +2,7 @@ import React from 'react'
 import "./Hero.css"
 import HeroImg from "../../Photo/Hero.png"
 import Dots from "../../Photo/circle-dots.png"
+import { Link} from 'react-router-dom'
 
 
 const Hero = ({type}) => {
@@ -14,9 +15,9 @@ const Hero = ({type}) => {
 
        <div className="words">
         
-        <h3 className='welcome'>Welcome to your <span> own canteen site</span></h3>
-        <h3 className='booking'>Book your order <span>through online</span> </h3>
-        <button className='started'>Order Online</button>
+        <h3 className='welcome'>Make Your <span className='tummy'>   Tummy</span></h3>
+        <h3 className='booking'>Happy <span className='tummy'>     Tummy</span> </h3>
+       <Link to="/menu"> <button className='started'>Order Online</button></Link>
         </div>
         <div className="photo">
             <img src={HeroImg} alt="" />

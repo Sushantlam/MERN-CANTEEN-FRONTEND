@@ -1,10 +1,15 @@
 .section{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+   padding-bottom: 20px;
+   background-color: rgb(251, 254, 255);
+    
+   
+
 }
 .imageList{
-    height: 120px;
+    height: 150px;
+    width: 150px;
     border-radius: 4px;
     margin: auto;
     
@@ -17,6 +22,8 @@
 .ready{
     text-align: center;
     font-size: 35px;
+    padding: 30px 0px;
+    color: rgb(245, 148, 164);
 }
 
 .section-list{
@@ -24,7 +31,7 @@
     justify-content: space-between;
     max-width: 1308px;
     width: 100%;
-    margin-top: 30px;
+    margin: 60px 0px;
    
    
     
@@ -32,23 +39,31 @@
 
 .desc{
     margin-top: 20px;
-   padding-left: 10px;
-   padding-right: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
    padding-bottom: 30px;
    padding-top: 10px;
     text-align: center;
    
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .sectionList{
-    border-radius:17px;
+    border-radius: 0px 20px 0px 20px;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    background-color: rgb(236, 222, 222);
+    max-width: 380px;
+    background-color:rgb(255, 255, 255);
     padding: 30px 10px;
+    box-shadow: 10px 10px 5px 0px rgba(188,188,188,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(188,188,188,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(188,188,188,0.75);
     
+    
+}
+
+.sectionList:hover{
+    transform: translateY(-1.5rem);
     
 }
 

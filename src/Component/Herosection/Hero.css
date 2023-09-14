@@ -26,13 +26,13 @@
 }
 
 .welcome{
-    font-size: 35px;
+    font-size: 65px;
 }
-span{
+.tummy{
     color: rgb(250, 128, 149);
 }
 .booking{
-    font-size: 35px;
+    font-size: 65px;
 }
 
 .started{

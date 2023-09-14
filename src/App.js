@@ -14,6 +14,7 @@ import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
 import Logout from './Pages/Logout/Logout';
 import Order from './Component/Order/Order';
+import Signup from './Pages/Signup/Signup';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/menu' element={<Menu/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         <Route path='/contactus' element={<Contact/>}/>
         <Route path='/logout' element={<Logout/>}/>
         <Route path='/order' element={<Order/>}/>

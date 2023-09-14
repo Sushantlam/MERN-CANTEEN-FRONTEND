@@ -1,9 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./featurefood.css"
 import useFetch from "../../hooks/useFetch"
 import { AuthContext } from '../../context/Auth'
 import { CartContext } from '../../context/Product'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
+import Food from "../../Photo/Food.jpg"
 
 const Featurefood = () => {
   
@@ -23,50 +25,80 @@ const Featurefood = () => {
   
 
 
-  const{data}= useFetch("/product?&limit=4")
+  const [Data, setData] = useState();
+  
+  const [lastPage, setLastPage] = useState();
+  
+  const [foodItems, setFoodItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch]= useState([])
+ // Number of items per page
+
+
+ 
+  
+  // const nextPage = () => {
+  //   if(lastPage<=currentPage){
+  //    setCurrentPage(1)
+  //   }else{
+  //     setCurrentPage(currentPage + 1);
+  //   }
+   
+  // };
+
+  // const prevPage = () => {
+  //   if (currentPage > 1) {
+  //     setCurrentPage(currentPage - 1);
+  //   }
+  // };
+
+  
+
+
+
+//its for the pagination
+  const fetchData =async()=>{
+    try {
+      const response = await axios.get(`/product?page=${currentPage}&key=${search}`)
+      console.log("response", response.data.data);
+      setData(response.data.data)
+      
+      setLastPage(response.data.lastPage)
+
+    } catch (error) {
+      
+    }
+  }
+
+  console.log(search);
+
+  useEffect(() => {
+    fetchData();
+   
+  }, []);
+
+
   // console.log(data);
   return (
     <>
-    <div className="maincontainer">
+<div className="featured">
+    <div className="featuredFood">
+    
+        <div className="featureContent">
+          <h3 className='eat'>Eat.</h3>
+          <span className='breakfast'>Breakfast, Lunch and Artisanal Pastries</span>
+          <span className='Para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores  corrupti! Dignissimos in excepturi laborum nisi voluptates vitae, totam laboriosam?</span>
 
-      <div className="subheading">
-        <h3 className='specialOffer'>Today <span>special Offer </span></h3>
-
-
-     
-      <div className="fproperties">
-
-{data?.map((data)=>(
-
-<div className='flist' key={data._id}>
-      <img src="https://images.trvl-media.com/hotels/23000000/22840000/22833400/22833387/dc044ec7_z.jpg" alt="" className='flistImage'/>
-      <span className='heading'>{data?.title}</span>
+        </div>
+        <div className="imageFeatured">
+<img className='featuredImage' src={Food} alt="" />
       
-      <div className='frating'>
-      <button className='bttn'>{data?.rating}</button>
-      <select className='bttn'> {Array.from(Array(6), (e,i)=>{
-          return(
-            <option key={i+1} className='bttn' value={i+1}>{i+1}</option>
-          )
-        })}</select>
-
-        <select className='bttn'>
-          <option className='bttn'>Half</option>
-          <option className='bttn'>Full</option>
-        </select>
-
-        <span className='review'>Rs {data?.price}</span>
       </div>
-      <button onClick={()=> handleAdd(data)}>Add to cart</button>
-  
-
-    </div>)) }
+    </div>
+    </div>
    
     
-    </div>
-    </div>
-    
-    </div> </> )
+       </> )
 }
 
 export default Featurefood

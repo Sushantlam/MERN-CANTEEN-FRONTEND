@@ -19,8 +19,8 @@ const About = () => {
 
        <div className="words">
         
-        <h3 className='welcome'>About<span> Us</span></h3>
-        <h3 className='booking'>We provide delicious<span> food </span> </h3>
+        <h3 className='welcome'>About<span className='us'> Us</span></h3>
+        <h3 className='booking'>We provide delicious<span className='us'> food </span> </h3>
        
         </div>
         <div className="photo">

@@ -1,0 +1,43 @@
+.signupMain{
+    background-color: rgb(86, 162, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.signUpImg{
+    height: 500px;
+}
+
+.signUpImg img{
+    height: 100%;
+}
+
+.signUpflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 5px 0px rgba(223, 223, 223, 0.91);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(245, 240, 240, 0.988);
+-moz-box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+
+    background-color: white;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.signUpPage{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    gap: 10px;
+   
+}
+.errorMessage{
+    color: red;
+}
+.signUpPage input{
+    padding: 10px 5px;
+    border: 0.2px solid gray;
+}

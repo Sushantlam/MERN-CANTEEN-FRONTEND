@@ -5,7 +5,21 @@
 }
 li{
     color: black;
+    text-decoration: none;
 }
+.link{
+    text-decoration: none;
+}
+
+.navTotal{
+    position: absolute;
+    top: 33px;
+    border-radius: 20px;
+    background-color: white;
+    width: 20px;
+    text-align: center;
+}
+
 
 .container{
     display: flex;
@@ -37,7 +51,7 @@ li{
 
 li{
     list-style: none;
-    text-decoration: underline;
+   
 
 }
 
@@ -61,3 +75,25 @@ li{
     border:1px solid gray;
     cursor: grab;
  }
+ .hamburger{
+    display: none;
+}
+
+
+
+ @media (min-width: 10px) and (max-width: 669px) {
+    .mainNav{
+        display: none;
+    }
+    .right{
+        display: none;
+    }
+.hamburger{
+    display: flex;
+}
+} 
+
+.logOutBttn{
+    position: absolute;
+    top: 70px;
+}
