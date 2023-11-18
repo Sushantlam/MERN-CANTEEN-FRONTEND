@@ -34,6 +34,11 @@
 .booking{
     font-size: 65px;
 }
+.photos{
+    box-shadow: 16px -11px 0px -1px rgba(250,128,149,0.75);
+    -webkit-box-shadow: 16px -11px 0px -1px rgba(250,128,149,0.75);
+    -moz-box-shadow: 16px -11px 0px -1px rgba(250,128,149,0.75);
+}
 
 .started{
     padding: 15px 30px;

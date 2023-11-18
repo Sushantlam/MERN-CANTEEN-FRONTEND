@@ -12,6 +12,12 @@
     
 }
 
+.optionFilter{
+    
+    margin-right: 20px;
+    padding: 10px 0px;
+}
+
 .listImage{
     width: 100%;
 }
@@ -20,7 +26,8 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-top: 10px;
+    /* margin-top: px; */
+    
 }
 
 .specialOffer{
@@ -35,14 +42,18 @@
     width: 100%;
     gap: 20px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .flist{
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 5px 29px 5px 29px;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     min-width: 300px;
+    min-height: 250px;
+background-color: rgb(255, 250, 250);
     padding: 10px;
     box-shadow: 10px 10px 5px 0px rgba(188,188,188,0.75);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(188,188,188,0.75);
@@ -53,12 +64,19 @@
     transform: translateY(-0.1rem);
 } */
 
+
+
 .flistImage{
     max-width: 100%;
     object-fit: cover;
     height: 150px;
+    border-radius: 10%;
 
 }
+
+/* .flistImage:hover {
+    transform: scale(1.3);
+  } */
 .frating{
    display: flex;
    gap:20px;

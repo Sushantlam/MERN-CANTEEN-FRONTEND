@@ -7,9 +7,19 @@
     justify-content: center;
 } */
 
+.MainCart{
+    height: 80vh;
+    max-width: 1340px;
+    margin: auto;
+}
+
 .table{
     margin-top: 20px;
-    min-width: 1308px;
+    width: 100%;
+    display: flex;
+    /* background-color: blue; */
+    justify-content: space-between;
+    position: relative;
     
    
 }
@@ -17,6 +27,7 @@
 .cartImage{
     height:100%;
     width: 100%;
+    border-radius: 50%;
     object-fit: contain;
    
 }
@@ -37,21 +48,34 @@
     border-radius: 20px;
 }
 
-.MainCart{
+/* .MainCart{
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
-}
+} */
 
 .cartData{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
-    max-width: 1308px;
+    width: 60%;
+    /* background-color: aqua; */
+    gap: 10px;
     margin-bottom: 15px;
 
+}
+
+.cartContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+    width: 100%;
+    gap: 10px;
 }
 
 .card-body{
@@ -63,9 +87,22 @@
 }
 .price{
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
+    min-width: 85%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    gap: 10px;
+    border: 0.5px solid rgb(162, 158, 158);
+     border-radius: 10px;
+    padding: 20px;
+}
+
+.rightContent{
+    position: relative;
+    width: 20%;
 }
 
 .handle{

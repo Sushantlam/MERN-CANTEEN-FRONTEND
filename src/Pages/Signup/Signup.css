@@ -6,6 +6,12 @@
     height: 100vh;
 
 }
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .signUpImg{
     height: 500px;
 }
@@ -27,6 +33,9 @@
     border-radius: 20px;
 }
 
+.loginBtn{
+    margin-top: 10px;
+}
 .signUpPage{
     display: flex;
     flex-direction: column;

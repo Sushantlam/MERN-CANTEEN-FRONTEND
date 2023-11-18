@@ -13,11 +13,16 @@ li{
 
 .navTotal{
     position: absolute;
-    top: 33px;
+    top: 35px;
     border-radius: 20px;
     background-color: white;
     width: 20px;
     text-align: center;
+}
+
+.shoppingCart{
+    font-size: 25px;
+    margin-top: 8px;
 }
 
 

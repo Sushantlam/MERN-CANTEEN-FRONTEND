@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import "./featurefood.css"
 import useFetch from "../../hooks/useFetch"
 import { AuthContext } from '../../context/Auth'
@@ -6,82 +6,57 @@ import { CartContext } from '../../context/Product'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import Food from "../../Photo/Food.jpg"
+import {gsap} from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 const Featurefood = () => {
   
-  const {addToCart, cartData}= useContext(CartContext)
-  const { email, error} = useContext(AuthContext)
-  const navigate=useNavigate()
-  const handleAdd=(item)=>{
-    if(email){
-      addToCart(item)
 
-    }
-    else{
-      navigate("/login")
-    }
-
-  }
+ 
   
+  const myElement = useRef()
+
+  useLayoutEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger);
+      const gtx=gsap.context(()=> {
+          const tl = gsap.timeline()
+         
+         
+  
+            tl.from(".featuredFood",{
+              opacity:0,
+              y:100,
+              duration: 1,
+              // color: "white",
+              // height: "100px",
+              // width:"100%",
+              stagger:0.5,
+              scrollTrigger:{
+                  trigger: ".featuredFood",
+                  // scroller: "body",
+                //  markers: true,
+                 start: "top 70%",
+                 end: "top 55%",
+                 scrub:1,
+             }
+         })
+      }, myElement)
+      return () => gtx.revert()
+         
+        },[])
 
 
-  const [Data, setData] = useState();
-  
-  const [lastPage, setLastPage] = useState();
-  
-  const [foodItems, setFoodItems] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [search, setSearch]= useState([])
- // Number of items per page
 
 
  
   
-  // const nextPage = () => {
-  //   if(lastPage<=currentPage){
-  //    setCurrentPage(1)
-  //   }else{
-  //     setCurrentPage(currentPage + 1);
-  //   }
-   
-  // };
-
-  // const prevPage = () => {
-  //   if (currentPage > 1) {
-  //     setCurrentPage(currentPage - 1);
-  //   }
-  // };
-
-  
 
 
 
-//its for the pagination
-  const fetchData =async()=>{
-    try {
-      const response = await axios.get(`/product?page=${currentPage}&key=${search}`)
-      console.log("response", response.data.data);
-      setData(response.data.data)
-      
-      setLastPage(response.data.lastPage)
 
-    } catch (error) {
-      
-    }
-  }
-
-  console.log(search);
-
-  useEffect(() => {
-    fetchData();
-   
-  }, []);
-
-
-  // console.log(data);
   return (
     <>
-<div className="featured">
+<div className="featured" ref={myElement}>
     <div className="featuredFood">
     
         <div className="featureContent">

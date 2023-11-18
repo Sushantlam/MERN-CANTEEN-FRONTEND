@@ -62,10 +62,10 @@
     
 }
 
-.sectionList:hover{
+/* .sectionList:hover{
     transform: translateY(-1.5rem);
     
-}
+} */
 
 @media (min-width: 280px) and (max-width: 669px) {
     .section-list{

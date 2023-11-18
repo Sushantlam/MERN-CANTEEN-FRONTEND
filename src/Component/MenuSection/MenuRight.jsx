@@ -25,15 +25,12 @@ const MenuRight = ({ item }) => {
   const handleAdd = (item) => {
     console.log("/product",item);
     // console.log(`${item.title} added successfully!`, item);
-    if (email) {
+   
       addToCart(item)
       setTimeout(() => {
         toast(`${item.title} added successfully!`);
       }, 1000)
-    }
-    else {
-      navigate("/login")
-    }
+   
 
   }
 
@@ -42,7 +39,7 @@ const MenuRight = ({ item }) => {
   const [Data, setData] = useState();
   // const [error, setError] = useState([]);
   const [lastPage, setLastPage] = useState(0);
-
+const [category, setCatgeory]= useState("")
 
   const [currentPage, setCurrentPage] = useState(1);
   const [key, setKey] = useState([])
@@ -77,8 +74,8 @@ const MenuRight = ({ item }) => {
 //its for the pagination
   const fetchData = async () => {
     try {
-      const response = await axios.get(`/product?page=${currentPage}&key=${key}`)
-      // console.log("response", response.data.data);
+      const response = await axios.get(`/product?page=${currentPage}&key=${key}&category=${category}`)
+     console.log("response", response.data.data);
       setData(response.data.data)
      setLastPage(response.data.lastPage)
 
@@ -87,13 +84,15 @@ const MenuRight = ({ item }) => {
     }
   }
 
+  
+
   // console.log(search);
 
 useEffect(() => {
     fetchData();
- }, [currentPage,lastPage,key]);
+ }, [currentPage,lastPage,key, category]);
 
-
+// console.log(Data);
 
   return (
     <>
@@ -102,6 +101,14 @@ useEffect(() => {
 
         <div className="subheading">
           <div className='searchFilter'>
+          <div className='categoryFilter'>
+  <select value={category} className='optionFilter' onChange={(e)=>setCatgeory(e.target.value)}>
+    <option value="" >All Categories</option>
+    <option value="Veg">Veg</option>
+    <option value="Non-veg">Non-veg</option>
+    
+  </select>
+</div>
             <div className="sFilter">
             <input type="text" className='searchInput' onChange={(e) => setKey(e.target.value)} value={key} placeholder='Search...' />
             <BiSearchAlt2 className='searchIcon'/>
@@ -111,19 +118,24 @@ useEffect(() => {
   {loading ? "loading" :
               <> {Data?.map((e) => (<div className='flist' key={e._id}>
                 {/* {console.log('heading',e.photo)} */}
-                <img src={"http://localhost:8800/images/"+e.photo} alt="" className='flistImage' />
+                
+                <img src={"https://canteen-node-api.onrender.com/images/"+e.photo} alt="" className='flistImage' />
+               
+                
                 <span className='heading'>{e.title}</span>
+                
                 <div className="itemFlex">
-                  <button className='bttn'>{e.rating}</button>
-                  <span className='word'>Excellent</span>
-
+                  <button className='bttn'>Rs {e.price}</button>
+                  <span className='word'>Time: {e.time}min</span>
+                 
                 </div>
    <div className="heading">
-                  {e.category} Veg and Non-Veg     
+               Category:   {e.category}   
                       </div>
  <button onClick={() => handleAdd(e)} className='addToCart'>Add to cart</button>
               </div>))}</>}
   </div>
+  
  <div className='pagination'> <button onClick={prevPage} className='paginationButton' >
             Previous Page
           </button>
