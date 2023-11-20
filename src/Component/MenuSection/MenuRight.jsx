@@ -78,6 +78,7 @@ const [category, setCatgeory]= useState("")
   const fetchData = async () => {
     try {
       console.log("current",currentPage);
+      console.log("category",category);
       const filteredapi=`https://canteen-node-api.onrender.com/product?page=${currentPage}&key=${key}&category=${category}`
       const response = await axios.get(filteredapi)
      console.log("response", response.data.data);
@@ -95,7 +96,7 @@ const [category, setCatgeory]= useState("")
 
 useEffect(() => {
     fetchData();
- }, [currentPage,key, category]);
+ }, [currentPage,lastPage,key, category]);
 
 // console.log(Data);
 
