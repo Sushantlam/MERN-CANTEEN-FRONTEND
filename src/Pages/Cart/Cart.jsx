@@ -58,7 +58,7 @@ const Cart = () => {
     if (email) {
       dispatch({ type: "Order_Start" })
       try {
-        const res = await axios.post("/orderDemo", {
+        const res = await axios.post("https://canteen-node-api.onrender.com/orderDemo", {
           email: email.email,
           userName: email.userName,
           item: cartData,

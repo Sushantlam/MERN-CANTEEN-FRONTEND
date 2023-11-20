@@ -32,7 +32,7 @@ const Login = () => {
     e.preventDefault()
     dispatch({ type: "Login_Start" })
     try {
-      const res = await axios.post("/user/login", credential)
+      const res = await axios.post("https://canteen-node-api.onrender.com/user/login", credential)
       console.log(res);
       dispatch({ type: "Login_Sucess", payload: res.data.details })
       navigate("/")

@@ -15,7 +15,8 @@ import Footer from '../Footer/Footer'
 
 
 const MenuRight = ({ item }) => {
-  const { data, loading, error, reFetchData } = useFetch("/product")
+  const api = "https://canteen-node-api.onrender.com/product"
+  const { data, loading, error, reFetchData } = useFetch(api)
 
   const { addToCart, cartData } = useContext(CartContext)
   const { email } = useContext(AuthContext)
@@ -74,7 +75,8 @@ const [category, setCatgeory]= useState("")
 //its for the pagination
   const fetchData = async () => {
     try {
-      const response = await axios.get(`/product?page=${currentPage}&key=${key}&category=${category}`)
+      const filteredapi=`https://canteen-node-api.onrender.com/product?page=${currentPage}&key=${key}&category=${category}`
+      const response = await axios.get(filteredapi)
      console.log("response", response.data.data);
       setData(response.data.data)
      setLastPage(response.data.lastPage)

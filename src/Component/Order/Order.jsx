@@ -19,7 +19,7 @@ const Order = () => {
   const fetchMyOrder = async (e) => {
 
     try {
-      const res = await axios.post("/orderDemo/myOrderData", {
+      const res = await axios.post("https://canteen-node-api.onrender.com/orderDemo/myOrderData", {
         email: email.email,
 
       })

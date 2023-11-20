@@ -26,7 +26,7 @@ const Signup = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('/user/signup', values);
+        const response = await axios.post('https://canteen-node-api.onrender.com/user/signup', values);
         // Handle success response here
         console.log(response.data.message);
         navigate('/login');
