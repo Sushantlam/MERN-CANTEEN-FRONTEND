@@ -65,7 +65,7 @@ const [category, setCatgeory]= useState("")
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
      
-      fetchData()
+      // fetchData()
       }
     else {
       setCurrentPage(lastPage);
