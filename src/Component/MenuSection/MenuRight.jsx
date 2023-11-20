@@ -64,6 +64,7 @@ const [category, setCatgeory]= useState("")
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+     
       fetchData()
       }
     else {
@@ -71,10 +72,12 @@ const [category, setCatgeory]= useState("")
     }
    
   };
+  console.log(currentPage);
   
 //its for the pagination
   const fetchData = async () => {
     try {
+      console.log("current",currentPage);
       const filteredapi=`https://canteen-node-api.onrender.com/product?page=${currentPage}&key=${key}&category=${category}`
       const response = await axios.get(filteredapi)
      console.log("response", response.data.data);
@@ -92,7 +95,7 @@ const [category, setCatgeory]= useState("")
 
 useEffect(() => {
     fetchData();
- }, [currentPage,lastPage,key, category]);
+ }, [currentPage,key, category]);
 
 // console.log(Data);
 
